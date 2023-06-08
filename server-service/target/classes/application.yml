@@ -1,0 +1,48 @@
+server:
+  port: 8012
+spring:
+  application:
+    name: server-service
+  cloud:
+    nacos:
+      server-addr: 192.168.3.3:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+        weight: 70
+      config:
+        file-extension: yaml
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dbwlwq?serverTimezone=GMT%2B8&characterEncoding=utf-8&userSSL=false
+    username: root
+    password: root
+
+#    master:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://localhost:3306/dbwlwq?serverTimezone=GMT%2B8&characterEncoding=utf-8&userSSL=false
+#      username: root
+#      password: root
+#    slave:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://localhost:3306/dbwlwq1?serverTimezone=GMT%2B8&characterEncoding=utf-8&userSSL=false
+#      username: root
+#      password: root
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:/mapper/*.xml
+  global-config:
+    db-config:
+      #设置实体类所对应的表的统一前缀
+#      table-prefix: t_
+      #设置全局主键id自增
+      id-type: auto
+  #配置类型别名所对应的包
+#  type-aliases-package: com.wlwq.pojo
+  #配置扫描通用枚举的包
+#  type-enums-package: com.wlwq.enums

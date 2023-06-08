@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        ephemeral: true
+
+      config:
+        enabled: true
+

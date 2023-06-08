@@ -1,0 +1,35 @@
+#server:
+#  port: 8088
+spring:
+#  application:
+#    name: gateway-server
+  cloud:
+#    nacos:
+#      server-addr: 192.168.3.3:8848
+#      discovery:
+#        username: nacos
+#        password: nacos
+#        namespace: public user-server
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: consumer-service
+          uri: lb://consumer-service
+          predicates:
+            - Path=/consumer-servi/**
+          filters:
+            - StripPrefix=1
+        - id: server-service
+          uri: lb://server-service
+          predicates:
+            - Path=/server-servi/**
+          filters:
+            - StripPrefix=1
+        - id: user-server
+            uri: lb://user-server
+            predicates:
+              - Path=/user-server/**
+            filters:
+              - StripPrefix=1

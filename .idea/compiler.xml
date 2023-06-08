@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="server" />
+        <module name="config-server" />
+        <module name="menu-server" />
+        <module name="user-server" />
+        <module name="gateway-server" />
+        <module name="feign-api" />
+        <module name="consumer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="consumer-service" target="1.8" />
+      <module name="gateway-api" target="1.8" />
+      <module name="gateway1" target="1.8" />
+      <module name="gateway2" target="1.8" />
+      <module name="server-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-server" options="-parameters" />
+      <module name="consumer" options="-parameters" />
+      <module name="consumer-service" options="-parameters" />
+      <module name="feign-api" options="-parameters" />
+      <module name="gateway-api" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
+      <module name="menu-server" options="-parameters" />
+      <module name="server" options="-parameters" />
+      <module name="server-service" options="-parameters" />
+      <module name="user-server" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,18 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: feign-api
+  cloud:
+    nacos:
+      server-addr: 192.168.3.3:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+
+feign:
+  client:
+    config:
+      stock-service:
+        logger-level: basic

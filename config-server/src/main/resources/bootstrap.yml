@@ -1,0 +1,16 @@
+spring:
+#  profiles:
+#    active:
+  application:
+    name: config-server
+  cloud:
+    nacos:
+      server-addr: 192.168.3.3:8848
+      username: nacos
+      password: nacos
+      config:
+#        namespace: dev
+        group: DEFAULT_GROUP
+        file-extension: yaml
+server:
+  port: 8020
